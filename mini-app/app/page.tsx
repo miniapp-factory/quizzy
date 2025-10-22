@@ -93,13 +93,13 @@ export default function Home() {
   };
 
   const shareScore = () => {
-    const shareText = `I scored ${score}/10 on QUIZZY! 🧠 Super hard quiz—try beating it: https://quizzy.miniapp-factory.marketplace.openxai.network`;
+    const shareText = `I scored ${score}/10 on #quizzy! 🧠 Super hard quiz—try beating it: https://quizzy.miniapp-factory.marketplace.openxai.network #openxai`;
     const url = `https://farcaster.xyz/~/compose?text=${encodeURIComponent(shareText)}`;
     window.open(url, "_blank");
   };
 
   const copyShareUrl = () => {
-    const shareText = `I scored ${score}/10 on QUIZZY! 🧠 Super hard quiz—try beating it: https://quizzy.miniapp-factory.marketplace.openxai.network`;
+    const shareText = `I scored ${score}/10 on #quizzy! 🧠 Super hard quiz—try beating it: https://quizzy.miniapp-factory.marketplace.openxai.network #openxai`;
     navigator.clipboard.writeText(shareText).catch(() => {
       // fallback or error handling if needed
     });
