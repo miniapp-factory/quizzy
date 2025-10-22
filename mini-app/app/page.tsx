@@ -98,6 +98,13 @@ export default function Home() {
     window.open(url, "_blank");
   };
 
+  const copyShareUrl = () => {
+    const shareText = `I scored ${score}/10 on QUIZZY! 🧠 Super hard quiz—try beating it: https://quizzy.miniapp-factory.marketplace.openxai.network`;
+    navigator.clipboard.writeText(shareText).catch(() => {
+      // fallback or error handling if needed
+    });
+  };
+
   if (showResult) {
     const getMotivation = () => {
       if (score >= 8) return "Genius Level! 🌟";
@@ -114,9 +121,14 @@ export default function Home() {
             <Button onClick={resetQuiz} variant="outline" className="w-full">
               Play Again
             </Button>
-            <Button onClick={shareScore} className="w-full bg-primary text-primary-foreground">
-              Share Score on Farcaster
-            </Button>
+            <div className="flex flex-row gap-2 w-full">
+              <Button onClick={shareScore} className="w-full bg-primary text-primary-foreground">
+                Share Score on Farcaster
+              </Button>
+              <Button onClick={copyShareUrl} variant="outline" className="w-full">
+                Copy Link
+              </Button>
+            </div>
           </div>
         </Card>
       </main>
