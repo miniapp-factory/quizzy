@@ -125,9 +125,14 @@ export default function Home() {
               <Button onClick={shareScore} className="w-full bg-primary text-primary-foreground">
                 Share Score on Farcaster
               </Button>
-              <Button onClick={copyShareUrl} variant="outline" className="w-full">
-                Copy Link
-              </Button>
+            </div>
+            <div className="flex justify-center">
+              <p
+                onClick={copyShareUrl}
+                className="text-sm text-muted-foreground cursor-pointer hover:underline"
+              >
+                Copy link
+              </p>
             </div>
           </div>
         </Card>
